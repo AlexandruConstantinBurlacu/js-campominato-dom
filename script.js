@@ -18,6 +18,9 @@ const gridElement = document.querySelector(".grid");
 const buttonElement = document.querySelector("#start");
 
 buttonElement.addEventListener("click", function() {
+
+    // in questo modo la griglia non si somma alle altre ogni volta che clicco il pulsante
+    gridElement.innerHTML = '';
     
     gridElement.classList.toggle('nascosta');
 
