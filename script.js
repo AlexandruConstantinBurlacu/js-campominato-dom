@@ -17,12 +17,33 @@
 const gridElement = document.querySelector(".grid");
 const buttonElement = document.querySelector("#start");
 
+
+function generateBombPositions() {
+    const bombPositions = [];
+    while(bombPositions.length < 16) {
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        if(!bombPositions.includes(randomNumber)) {
+            bombPositions.push(randomNumber);
+        }
+    }
+    return bombPositions
+}
+
+
+
+
+
 buttonElement.addEventListener("click", function() {
 
     // in questo modo la griglia non si somma alle altre ogni volta che clicco il pulsante
     gridElement.innerHTML = '';
     
     gridElement.classList.toggle('nascosta');
+
+
+    const bombPositions = generateBombPositions();
+
+
 
     for(let i = 1; i <= 100; i++) {
         const squareElement = document.createElement('div');
@@ -49,8 +70,16 @@ buttonElement.addEventListener("click", function() {
 
     }
 
+    console.log(bombPositions);
+
 
 });
 
 
-console.log(gridElement);
+
+
+
+
+
+
+
