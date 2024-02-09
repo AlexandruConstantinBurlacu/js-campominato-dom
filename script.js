@@ -26,7 +26,7 @@ function generateBombPositions() {
             bombPositions.push(randomNumber);
         }
     }
-    return bombPositions
+    return bombPositions;
 }
 
 
@@ -55,11 +55,12 @@ buttonElement.addEventListener("click", function() {
         // cambio colore al click del numero
 
         squareElement.addEventListener('click', function() {
-            if (squareElement.style.backgroundColor === 'green') {
-                squareElement.style.backgroundColor = '';
+            if (bombPositions.includes(i)) {
+                squareElement.style.backgroundColor = 'red';
+                console.log('Hai calpestato una bomba ', i);
             } else {
                 // aggiungo il numero della casella in console
-                console.log('Hai cliccato la casella numero: ', i);
+                console.log('Sei ancora salvo, per ora ', i);
                 squareElement.style.backgroundColor = 'green';
 
             }
